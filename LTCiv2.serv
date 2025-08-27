@@ -1,0 +1,105 @@
+# Server commands to make rules similar to Civ2.
+#
+# Use this as, eg, "./freeciv21-server -r data/civ2.serv"
+#
+# Civ2 start:
+rulesetdir LTCiv2
+
+# ruleset test settings ------------------------------
+ set fogofwar "DISABLED"
+ set unitwaittime 0
+ set timeout 0
+ set revealmap "START"
+ set fixedlength disabled
+ cmdlevel hack
+# ----------------------------------------------------
+
+# server test game settings --------------------------
+# set timeout 120 # 2 mins
+# set unitwaittime 10  # 10 sec
+# set revealmap "START"
+# set startcity ENABLED
+# set fixedlength disabled
+# cmdlevel info
+# ----------------------------------------------------
+
+# real game settings --------------------------------
+# set fogofwar "ENABLED"
+# set first_timeout 259200 # 3 days
+# set timeout 90000 # 25 hours
+# set unitwaittime 36000  # 10 hours
+# set fixedlength disabled
+# cmdlevel info
+# ----------------------------------------------------
+
+
+# map
+set alltemperate disabled
+set barbarians disabled
+set generator "FRACTAL"
+set huts 0
+set landmass 35
+set separatepoles disabled
+set specials 380
+set startpos ALL
+set steepness 30
+set temperature 50
+set topology WRAPX|ISO|SQUARE
+set wetness 60
+set mapsize "PLAYER"
+set tilesperplayer 250 # <-----------------------------------------------------
+
+# general rules
+set nationset all
+set borders enabled
+set citymindist 1
+set foggedborders enabled
+set victories SPACERACE
+set killunhomed 0
+set airliftingstyle FROM_ALLIES|TO_ALLIES
+
+set endturn 5000
+set unitwaittime_style ACTIVITIES
+
+# diplomacy, technology
+set diplchance 50
+set diplomacy HUMAN
+set sciencebox 40
+set techlost_donor 0
+set techlost_recv 0
+set techpenalty 50
+set trademindist 10
+set team_pooled_research disabled
+set techlevel 0
+
+# technical
+set allowtake ""
+set compresstype LIBZ
+set ec_chat enabled
+set ec_info enabled 
+set ec_max_size 15000
+set ec_turns 5
+set maxplayers 126  <---------------------------
+set saveturns 1
+set scorelog enabled
+metamessage "Longturn Civ2 Game"
+metapatches longturn
+set autotoggle disabled
+
+#sim
+
+
+set demography "NnAwSRLaPEMOCqrb"
+set dispersion 3
+set borders SEE_INSIDE
+
+set startunits ccccww
+
+# Players
+set nationset all
+read players.serv
+hard
+start
+
+
+# changed game settings are defined in game.ruleset
